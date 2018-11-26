@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : FRENDS.Common.Excel</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Component-specific-documentation_5242885.html">Component specific documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Frends.Common.Data_5242891.html">Frends.Common.Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : FRENDS.Common.Excel
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Frends Editor</span> on Jul 05, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Reads Excel file and converts it to XML or CSV according to the task input parameters. Task can read both .xslx and .xsl files. Images are not read. Only result values are red from cells containing a equation. Task does not check whether or not all specified sheets are read, or if all worksheet has same number of columns while converting to CSV. This kind of conditions have to be checked outside of task, e.g. with XSLT or schema.</p><h3 id="FRENDS.Common.Excel-InputParameters">Input Parameters</h3><ul><li><strong><code>path</code></strong><ul><li>Path of the Excel file to be read.</li></ul></li><li><strong><code>OutputFileType</code></strong><ul><li>Format output string as XML or CSV.</li></ul></li><li><strong><code>ReadOnlySheets</code></strong><ul><li>Specifies worksheets to be read. If none is specified task will read all sheets.</li></ul></li></ul><h3 id="FRENDS.Common.Excel-OutputResult">Output Result</h3><ul><li><strong><code>String</code></strong><ul><li>Returns a string containing read information.</li></ul></li></ul><p><br/></p><h3 id="FRENDS.Common.Excel-Exampleoutputoftwoworksheets">Example output of two worksheets</h3><div class="code panel pdl" style="border-width: 1px;">
+ <div class="codeHeader panelHeader pdl hide-border-bottom" style="border-bottom-width: 1px;">
+  <b class=" code-title">Content of worksheets named &quot;Sheet1&quot; and &quot;OmituinenNimi&quot;.</b>
+  <span class="collapse-source expand-control" style="display:none;"><span class="expand-control-icon icon">&nbsp;</span><span class="expand-control-text">Expand source</span></span>
+  <span class="collapse-spinner-wrapper"></span>
+ </div>
+ <div class="codeContent panelContent pdl hide-toolbar"> 
+  <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence; collapse: true" data-theme="Confluence">&lt;workbook workbook_name=&quot;ExcelTestInput1.xlsx&quot;&gt;
+    &lt;worksheet worksheet_name=&quot;Sheet1&quot;&gt;
+        &lt;row row_header=&quot;1&quot;&gt;
+            &lt;column column_header=&quot;A&quot;&gt;Foo&lt;/column&gt;
+            &lt;column column_header=&quot;B&quot;&gt;Bar&lt;/column&gt;
+            &lt;column column_header=&quot;C&quot;&gt;Kanji 働&lt;/column&gt;
+            &lt;column column_header=&quot;D&quot;&gt;Summa&lt;/column&gt;
+        &lt;/row&gt;
+        &lt;row row_header=&quot;2&quot;&gt;
+            &lt;column column_header=&quot;A&quot;&gt;1&lt;/column&gt;
+            &lt;column column_header=&quot;B&quot;&gt;2&lt;/column&gt;
+            &lt;column column_header=&quot;C&quot;&gt;3&lt;/column&gt;
+            &lt;column column_header=&quot;D&quot;&gt;6&lt;/column&gt;
+        &lt;/row&gt;
+    &lt;/worksheet&gt;
+    &lt;worksheet worksheet_name=&quot;OmituinenNimi&quot;&gt;
+        &lt;row row_header=&quot;1&quot;&gt;
+            &lt;column column_header=&quot;A&quot;&gt;Kissa kuva&lt;/column&gt;
+            &lt;column column_header=&quot;B&quot;&gt;1&lt;/column&gt;
+            &lt;column column_header=&quot;C&quot;&gt;2&lt;/column&gt;
+            &lt;column column_header=&quot;D&quot;&gt;3&lt;/column&gt;
+        &lt;/row&gt;
+        &lt;row row_header=&quot;15&quot;&gt;
+            &lt;column column_header=&quot;A&quot;&gt;Foo&lt;/column&gt;
+        &lt;/row&gt;
+        &lt;row row_header=&quot;16&quot;&gt;
+            &lt;column column_header=&quot;B&quot;&gt;Bar&lt;/column&gt;
+        &lt;/row&gt;
+    &lt;/worksheet&gt;
+&lt;/workbook&gt;</pre> 
+ </div>
+</div><h3 id="FRENDS.Common.Excel-Exampleoutputofoneworksheet">Example output of one worksheet</h3><div class="code panel pdl" style="border-width: 1px;">
+ <div class="codeHeader panelHeader pdl hide-border-bottom" style="border-bottom-width: 1px;">
+  <b class=" code-title">Content of worksheet named &quot;OmituinenNimi&quot;.</b>
+  <span class="collapse-source expand-control" style="display:none;"><span class="expand-control-icon icon">&nbsp;</span><span class="expand-control-text">Expand source</span></span>
+  <span class="collapse-spinner-wrapper"></span>
+ </div>
+ <div class="codeContent panelContent pdl hide-toolbar"> 
+  <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: text; gutter: false; theme: Confluence; collapse: true" data-theme="Confluence">Kissa kuva,1,2,3
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+Foo,,,
+,Bar,,</pre> 
+ </div>
+</div><p><br/></p><h3 id="FRENDS.Common.Excel-ImagesofexampleExcelfile">Images of example Excel file</h3><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" height="250" src="https://teams.hiq.fi/confluence/download/attachments/32254678/Excel_kuva1.PNG?version=1&amp;modificationDate=1488282448880&amp;api=v2" data-image-src="https://teams.hiq.fi/confluence/download/attachments/32254678/Excel_kuva1.PNG?version=1&amp;modificationDate=1488282448880&amp;api=v2"></span>  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" height="250" src="https://teams.hiq.fi/confluence/download/attachments/32254678/Excel_kuva2.PNG?version=1&amp;modificationDate=1488282448671&amp;api=v2" data-image-src="https://teams.hiq.fi/confluence/download/attachments/32254678/Excel_kuva2.PNG?version=1&amp;modificationDate=1488282448671&amp;api=v2"></span></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

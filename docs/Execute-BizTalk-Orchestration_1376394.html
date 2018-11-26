@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : Execute BizTalk Orchestration</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : Execute BizTalk Orchestration
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> ASmo Urpilainen</span>, last modified by <span class='editor'> Janne Vuoti</span> on Nov 13, 2015
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>FRENDS<span style="font-size: 16.0px;line-height: 1.5;"><strong>⁴ </strong>Common Components library contains a task to execute BizTalk orchestrations using one-way and two-way ports, which can be used to pass a message and recieve a response from BizTalk respectively. These tasks can be used to replace the old BizTalk Two-Way and One-Way calls and the Submit adapter used in conjunction with older FRENDS generations.</span></p><p><span style="font-size: 16.0px;line-height: 1.5;">The tasks are located in the <span><strong>FRENDS.Common.Execute</strong> NuGet-package, under the names <strong><span>ExecuteBizTalk.ExecuteBizTalkOneWayCall</span></strong> and <strong><span>ExecuteBizTalk.ExecuteBizTalkTwoWayCall</span></strong><span>. The call is preformed utilizing the BizTalk port adapter <a href="https://msdn.microsoft.com/en-us/library/bb226493.aspx" class="external-link" rel="nofollow">WCF-NetNamedPipe</a>.</span></span></span></p><h3 id="ExecuteBizTalkOrchestration-Parameters"><span style="font-size: 16.0px;line-height: 1.5;"><span><span>Parameters</span></span></span></h3><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter Name</th><th class="confluenceTh"><span>Explanation</span></th><th class="confluenceTh"><span>Example</span></th></tr><tr><td class="confluenceTd"><span>Input message</span></td><td class="confluenceTd">The message that is passed to the BizTalk orchestration. The message is given in a string format and needs to be XML.</td><td class="confluenceTd">&lt;foo&gt;bar&lt;/foo&gt;</td></tr><tr><td class="confluenceTd"><span>Port uri</span></td><td class="confluenceTd">The URI used to determine which port the message is passed to. This needs to be given in the format <strong>net.pipe://localhost/{UniqueNameForPort}</strong></td><td class="confluenceTd">net.pipe://localhost/SendBizTalk</td></tr><tr><td class="confluenceTd"><span>Timeout s</span></td><td class="confluenceTd">The timeout for the execution of the BizTalk orchestration in seconds.</td><td class="confluenceTd">10</td></tr></tbody></table></div><h3 id="ExecuteBizTalkOrchestration-#result"><span style="font-size: 16.0px;line-height: 24.0px;">#result</span></h3><p><span style="font-size: 16.0px;line-height: 24.0px;">The task will return true or an exception if one-way-call is used and will return the return message as delivered by the BizTalk orchestration or if there is a problem in the execution the error is returned in a SOAP fault element and an exception is thrown if the timeout is reached or the orchestration call is not successfull.</span></p><div class="confluence-information-macro confluence-information-macro-tip"><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>You don't have build a separate exception message as was the case with older FRENDS generations and you can just use default BizTalk exception handling instead, from where the exception is passed back to FRENDS automatically.</p></div></div><p><span style="font-size: 16.0px;line-height: 24.0px;"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/1376394/1376389.png?height=250" data-image-src="attachments/1376394/1376389.png" data-unresolved-comment-count="0" data-linked-resource-id="1376389" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2015-11-13 14:17:29.png" data-base-url="https://frends.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1376394" data-linked-resource-container-version="3" data-media-id="4ecc00b3-187d-4e89-a747-e840b4aecee3" data-media-type="file"></span></span></p><h3 id="ExecuteBizTalkOrchestration-ConfiguringBizTalkRecieveLocations"><span style="font-size: 16.0px;line-height: 24.0px;">Configuring BizTalk Recieve Locations</span></h3><ol><li>Select the WCF-NetNamedPipe adapter:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/1376394/1376390.png?height=250" data-image-src="attachments/1376394/1376390.png" data-unresolved-comment-count="0" data-linked-resource-id="1376390" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2015-11-13 14:25:54.png" data-base-url="https://frends.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1376394" data-linked-resource-container-version="3" data-media-id="c6e5cebe-86fd-4055-aabc-f6dcbf8a45fb" data-media-type="file"></span></li><li>Select your desired Pipelines</li><li>In the configure section enter an unique address to the URI field in the format net.pipe://localhost/{UniqueNameForPort}. This is the URI you will be using to configure the FRENDS task.</li><li>Set your desired Timeouts in the timeout tab</li><li>In the security tab set &quot;Security Mode&quot; to &quot;None&quot;:<br/> <span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/1376394/1376391.png" data-image-src="attachments/1376394/1376391.png" data-unresolved-comment-count="0" data-linked-resource-id="1376391" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2015-11-13 14:28:23.png" data-base-url="https://frends.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1376394" data-linked-resource-container-version="3" data-media-id="519cf5e7-fca2-474c-a85b-372e1a905d7f" data-media-type="file"></span></li><li>In the Messages tab, select &quot;Body&quot; option for both Inbound and Outbound fields. Also if you wish to recieve error information from BizTalk in case of exceptions set both &quot;Suspend request message on failure&quot; and &quot;Include exception detail in faults&quot;  to true:<br/> <span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/1376394/1376392.png" data-image-src="attachments/1376394/1376392.png" data-unresolved-comment-count="0" data-linked-resource-id="1376392" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2015-11-13 14:30:37.png" data-base-url="https://frends.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1376394" data-linked-resource-container-version="3" data-media-id="72696c7f-cec1-472c-b442-85d163389a88" data-media-type="file"></span></li><li>Now you can use the URI field to configure FRENDS tasks:<br/> <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/1376394/1376393.png?height=250" data-image-src="attachments/1376394/1376393.png" data-unresolved-comment-count="0" data-linked-resource-id="1376393" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2015-11-13 14:31:23.png" data-base-url="https://frends.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1376394" data-linked-resource-container-version="3" data-media-id="ad29d61f-8b4b-4d39-9471-240947081f58" data-media-type="file"></span></li></ol><p> </p><p><span style="font-size: 16.0px;line-height: 24.0px;"><br/></span></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1376394/1376389.png">image2015-11-13 14:17:29.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1376394/1376390.png">image2015-11-13 14:25:54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1376394/1376391.png">image2015-11-13 14:28:23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1376394/1376392.png">image2015-11-13 14:30:37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1376394/1376393.png">image2015-11-13 14:31:23.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

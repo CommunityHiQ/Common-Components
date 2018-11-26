@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : Frends.Common.Execute.ExecuteProcess.ExecuteProcessWithResult</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Component-specific-documentation_5242885.html">Component specific documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Frends.Common.Execute_5242898.html">Frends.Common.Execute</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : Frends.Common.Execute.ExecuteProcess.ExecuteProcessWithResult
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Emma Luukka</span>, last modified by <span class='editor'> Ville Halminen</span> on Mar 23, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This task executes a given process with the given parameters and returns the result of the execution.</p><h3 id="Frends.Common.Execute.ExecuteProcess.ExecuteProcessWithResult-InputParameters">Input Parameters</h3><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter name</th><th class="confluenceTh">Description</th><th colspan="1" class="confluenceTh">Data type</th><th colspan="1" class="confluenceTh">Example values</th></tr><tr><th style="text-align: right;" class="confluenceTh"><strong>Script path</strong></th><td class="confluenceTd"><p>The path to the script or process that is to be executed.</p><p>Server variables can also be used for example &quot;cmd&quot; is valid for most servers</p></td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd"><span>&quot;cmd&quot;</span></td></tr><tr><th style="text-align: right;" class="confluenceTh">Arguments</th><td class="confluenceTd"><p>An array of argument names and values that are passed to the executable script or process.</p><p>The arguments have following parameters:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter name</th><th class="confluenceTh">Description</th><th colspan="1" class="confluenceTh">Data type</th><th class="confluenceTh">Example</th></tr><tr><td class="confluenceTd">Name</td><td class="confluenceTd">Name of the argument</td><td colspan="1" class="confluenceTd">String</td><td class="confluenceTd"> &quot;/C&quot;</td></tr><tr><td class="confluenceTd">Value</td><td class="confluenceTd">Value of the argument</td><td colspan="1" class="confluenceTd">String </td><td class="confluenceTd"> &quot;nslookup <a href="http://google.com" class="external-link" rel="nofollow">google.com</a>&quot;</td></tr></tbody></table></div></td><td colspan="1" class="confluenceTd">Object collection</td><td colspan="1" class="confluenceTd"> </td></tr><tr><th colspan="1" class="confluenceTh">TimeoutMS</th><td colspan="1" class="confluenceTd"><p>The timeout of the script or process execution in milliseconds. If the process doesn't finish in the given time, an exception will be thrown.</p></td><td colspan="1" class="confluenceTd">Integer</td><td colspan="1" class="confluenceTd">10000</td></tr></tbody></table></div><h3 id="Frends.Common.Execute.ExecuteProcess.ExecuteProcessWithResult-OutputResult">Output Result</h3><ul><li><strong><code>String</code></strong></li></ul><ul class="_mce_tagged_br"><li style="list-style-type: none;background-image: none;"><ul class="_mce_tagged_br"><li>Returns the returnvalue of the process or execution.<br/><br/></li></ul></li></ul><div class="codehilite"><h3 id="Frends.Common.Execute.ExecuteProcess.ExecuteProcessWithResult-Errorresults"><span style="color: rgb(0,0,0);">Error results</span></h3></div><p>The task will return an exception <code>External process execution failed with returncode: ExitCode and output: OutPut.</code> if the process failed and exited with returncode 0.</p><p>The task will return an exception <code>External process execution timed out after TimeOut milliseconds.</code> if the process execution timed out before recieving a response or returncode.</p><h3 id="Frends.Common.Execute.ExecuteProcess.ExecuteProcessWithResult-ExampleUsage">Example Usage</h3><div class="panel" style="border-width: 2px;"><div class="panelContent">
+<h3 id="Frends.Common.Execute.ExecuteProcess.ExecuteProcessWithResult-ScriptPath:&quot;cmd&quot;"><strong style="font-size: 14.0px;line-height: 1.42857;">ScriptPath:</strong> &quot;<code style="font-size: 14.0px;line-height: 1.42857;">cmd&quot;</code></h3><p><strong>Arguments:</strong>  </p><ul><li>Argument 1</li><ul><li>Name = &quot;/C&quot;</li><li>Value = &quot;nslookup <a href="http://google.com/" class="external-link" rel="nofollow">google.com</a>&quot;</li></ul></ul><p><strong>Results:</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: text; gutter: false; theme: RDark" data-theme="RDark">External process execution was successful with output: 
+Server:  UnKnown
+Address:  100.86.54.170
+
+Name:    google.com
+Addresses:  2a00:1450:400b:802::200e
+	  216.58.198.78
+</pre>
+</div></div>
+</div></div><p> </p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : FRENDS.Common.Services.EmailServices.SendEmailWithFileAttachments</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Component-specific-documentation_5242885.html">Component specific documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Frends.Common.Services_5242902.html">Frends.Common.Services</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : FRENDS.Common.Services.EmailServices.SendEmailWithFileAttachments
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Frends Editor</span>, last modified on Feb 25, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This Task sends email with possible file attachments fetched from given path(s).</p><h2 id="FRENDS.Common.Services.EmailServices.SendEmailWithFileAttachments-InputParameters">Input Parameters</h2><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter name</th><th class="confluenceTh">Description</th><th class="confluenceTh">Example value</th></tr><tr><th style="text-align: right;" class="confluenceTh"><strong>To</strong></th><td class="confluenceTd"><p><span>Recipients address. For multiple recipients, separate addresses with &quot;,&quot; (comma) or &quot;;&quot; (semicolon).</span></p></td><td class="confluenceTd"><p>&quot;john.doe@domain.com, jane.doe@domain.com&quot;</p></td></tr><tr><th style="text-align: right;" class="confluenceTh"><strong>From</strong></th><td class="confluenceTd"><p>Sender email address.</p></td><td class="confluenceTd">&quot;jane.doe@domain.com&quot;</td></tr><tr><th style="text-align: right;" class="confluenceTh"><strong>Subject</strong></th><td class="confluenceTd"><p>Email subject value.</p></td><td class="confluenceTd">&quot;You are my subject&quot;</td></tr><tr><th style="text-align: right;" colspan="1" class="confluenceTh"><strong>Message</strong></th><td colspan="1" class="confluenceTd"><p>Email message value.</p></td><td colspan="1" class="confluenceTd">&quot;You've got mail&quot;</td></tr><tr><th style="text-align: right;" colspan="1" class="confluenceTh"><strong>Smtp server</strong></th><td colspan="1" class="confluenceTd"><p>SMTP server name.</p></td><td colspan="1" class="confluenceTd">&quot;smtp.somedomain.com&quot;</td></tr><tr><th style="text-align: right;" colspan="1" class="confluenceTh"><strong>Port</strong></th><td colspan="1" class="confluenceTd"><p>SMTP server port.</p></td><td colspan="1" class="confluenceTd">25</td></tr><tr><th style="text-align: right;" colspan="1" class="confluenceTh"><strong>Use windows authentication</strong></th><td colspan="1" class="confluenceTd"><p>Sets if windows authentication is used (uses FRENDS 4 agent account). If false, set user name and password parameters.</p></td><td colspan="1" class="confluenceTd">true</td></tr><tr><th style="text-align: right;" colspan="1" class="confluenceTh"><strong>User name</strong></th><td colspan="1" class="confluenceTd"><p>SMTP server user name value. Used if Use windows authentication is set to false.</p></td><td colspan="1" class="confluenceTd">&quot;doejohn&quot;</td></tr><tr><th style="text-align: right;" colspan="1" class="confluenceTh"><strong>Password</strong></th><td colspan="1" class="confluenceTd"><p>SMTP server password value. Used if Use windows authentication is set to false.</p></td><td colspan="1" class="confluenceTd">&quot;mypassword&quot;</td></tr><tr><th style="text-align: right;" colspan="1" class="confluenceTh">Send if attachments not found</th><td colspan="1" class="confluenceTd">Choose if email should be sent, even if no attachments were found.</td><td colspan="1" class="confluenceTd">false</td></tr><tr><th style="text-align: right;" colspan="1" class="confluenceTh"><strong>File attachments</strong></th><td colspan="2" class="confluenceTd"><p>A collection of attachment file paths.</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter name</th><th class="confluenceTh">Description</th><th class="confluenceTh">Example value</th></tr><tr><th style="text-align: right;" class="confluenceTh">File path</th><td class="confluenceTd"><p>Path to file or folder of attachment(s). Wildcard usage is allowed.</p><ul><li>Attach single file: &quot;C:\attachments\singlefile.txt&quot;</li><li>Attach all files with '.txt' extension: &quot;C:\attachments\*.txt&quot;</li><li>Attach all files in attachments folder: &quot;C:\attachments\&quot;</li></ul></td><td class="confluenceTd"><span>&quot;C:\email\attachments\*.txt&quot;</span></td></tr></tbody></table></div></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
