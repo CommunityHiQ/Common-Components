@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : FRENDS.Common.ConvertToJSON_v2</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Component-specific-documentation_5242885.html">Component specific documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Frends.Common.Data_5242891.html">Frends.Common.Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : FRENDS.Common.ConvertToJSON_v2
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Frends Editor</span> on Jul 05, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This task takes an object as an input, which is the converted to JSON according to the following rules and parameters.</p><p>Version 2 (2.0.0.0) makes it possible to change numeric keys back to their original form from XML, when they have been originally modified with <a href="FRENDS.Common.ConvertToJSON_v2_55279617.html">FRENDS.Common.ConvertToJSON_v2</a>.</p><p>Note: the task uses a recursive helper function to look through the JSON keys. Due to recursiveness, the task might blow up the stack with large inputs. If you suspect that your input contains many nested arrays or braces-enclosed data, be sure to test the task thoroughly.</p><h3 id="FRENDS.Common.ConvertToJSON_v2-InputParameters">Input Parameters</h3><ul><li><strong><code>Input</code></strong><ul><li>The object that is converted to JSON. Input can be given in the following formats:<ul><li>XML as a C# String</li><li>CSV as a C# String</li><li>FixedLength as a C# String</li></ul></li></ul></li><li><strong><code>CSVSeparator</code></strong><ul><li>If your input is CSV, enter the CSV separator here as a string, for example <code>,</code></li><li>Otherwise leave empty</li></ul></li><li><strong><code>FLColumnLengths</code></strong><ul><li>If your input is fixed length, enter the all of the column lengths as an array of Integers</li><li>Otherwise leave empty</li></ul></li><li><strong><code>JsonNumericKeysAppendedWith<br/></code></strong><ul><li>If numeric JSON keys were changed before conversion to XML and the user needs to bring them back to their original state, enter the appended string here.</li><li>Otherwise leave empty.</li></ul></li><li><strong><code>InputHasHeaderRow</code></strong><ul><li>Boolean value indicating if your CSV or FixedLength file should have a header row</li><li>By default false</li></ul></li><li><strong><code>TrimOuputColumns</code></strong><ul><li>Boolean value indicating if the values of your CSV or fixed length input should be trimmed, for example a value of <strong>&quot;Value 123 &quot;</strong> would result in a JSON value of <strong>&quot;Value 123&quot;</strong></li><li>By default false</li></ul></li><li><strong>omitXMLRootElement</strong><br/><ul><li>Boolean value indicating if the XML root element should be omitted from the resulting JSON</li><li>By default false</li></ul></li></ul><h3 id="FRENDS.Common.ConvertToJSON_v2-OutputResult">Output Result</h3><ul><li><strong><code>String</code></strong><ul><li>A string containing the converted JSON</li></ul></li></ul><h3 id="FRENDS.Common.ConvertToJSON_v2-ExampleUsage">Example Usage</h3><p>For example calling this task, with JsonAppendNumericKeysWith set to &quot;foo&quot;, omitXMLRootElement set to &quot;true&quot;, and with the following input:</p><div class="code panel pdl" style="border-width: 1px;">
+ <div class="codeHeader panelHeader pdl hide-border-bottom">
+  <b class="code-title"></b>
+  <span class="collapse-source expand-control" style="display:none;"><span class="expand-control-icon icon">&nbsp;</span><span class="expand-control-text">Expand source</span></span>
+  <span class="collapse-spinner-wrapper"></span>
+ </div>
+ <div class="codeContent panelContent pdl hide-toolbar"> 
+  <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence; collapse: true" data-theme="Confluence">&lt;root&gt;
+	&lt;expand&gt;schema,names&lt;/expand&gt;
+	&lt;startAt&gt;0&lt;/startAt&gt;
+	&lt;maxResults&gt;1000&lt;/maxResults&gt;
+	&lt;total&gt;36&lt;/total&gt;
+	&lt;issues&gt;
+		&lt;expand&gt;operations,versionedRepresentations,editmeta,changelog,transitions,renderedFields&lt;/expand&gt;
+		&lt;id&gt;204588&lt;/id&gt;
+		&lt;self&gt;https://teams.hiq.fi/jira/rest/api/2/issue/xxxxx&lt;/self&gt;
+		&lt;key&gt;YYY-6&lt;/key&gt;
+		&lt;fields&gt;
+			&lt;assignee&gt;
+				&lt;self&gt;https://teams.hiq.fi/jira/rest/api/2/user?username=user1&lt;/self&gt;
+				&lt;name&gt;User1&lt;/name&gt;
+				&lt;key&gt;user1&lt;/key&gt;
+				&lt;emailAddress&gt;user1@hiq.fi&lt;/emailAddress&gt;
+				&lt;avatarUrls&gt;
+					&lt;foo48x48&gt;https://teams.hiq.fi/jira/secure/useravatar&lt;/foo48x48&gt;
+					&lt;foo24x24&gt;https://teams.hiq.fi/jira/secure/useravatar?size=small&lt;/foo24x24&gt;
+					&lt;foo16x16&gt;https://teams.hiq.fi/jira/secure/useravatar?size=xsmall&lt;/foo16x16&gt;
+					&lt;foo32x32&gt;https://teams.hiq.fi/jira/secure/useravatar?size=medium&lt;/foo32x32&gt;
+				&lt;/avatarUrls&gt;
+				&lt;displayName&gt;User1&lt;/displayName&gt;
+				&lt;active&gt;true&lt;/active&gt;
+				&lt;timeZone&gt;Europe/Helsinki&lt;/timeZone&gt;
+			&lt;/assignee&gt;
+		&lt;/fields&gt;
+	&lt;/issues&gt;
+&lt;/root&gt;</pre> 
+ </div>
+</div><p><br/></p><p>Will produce the following JSON document:</p><div class="code panel pdl" style="border-width: 1px;">
+ <div class="codeHeader panelHeader pdl hide-border-bottom">
+  <b class="code-title"></b>
+  <span class="collapse-source expand-control" style="display:none;"><span class="expand-control-icon icon">&nbsp;</span><span class="expand-control-text">Expand source</span></span>
+  <span class="collapse-spinner-wrapper"></span>
+ </div>
+ <div class="codeContent panelContent pdl hide-toolbar"> 
+  <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Confluence; collapse: true" data-theme="Confluence">{
+	&quot;expand&quot;: &quot;schema,names&quot;,
+	&quot;startAt&quot;: &quot;0&quot;,
+	&quot;maxResults&quot;: &quot;1000&quot;,
+	&quot;total&quot;: &quot;36&quot;,
+	&quot;issues&quot;: {
+		&quot;expand&quot;: &quot;operations,versionedRepresentations,editmeta,changelog,transitions,renderedFields&quot;,
+		&quot;id&quot;: &quot;204588&quot;,
+		&quot;self&quot;: &quot;https://teams.hiq.fi/jira/rest/api/2/issue/xxxxx&quot;,
+		&quot;key&quot;: &quot;YYY-6&quot;,
+		&quot;fields&quot;: {
+			&quot;assignee&quot;: {
+				&quot;self&quot;: &quot;https://teams.hiq.fi/jira/rest/api/2/user?username=user1&quot;,
+				&quot;name&quot;: &quot;User1&quot;,
+				&quot;key&quot;: &quot;user1&quot;,
+				&quot;emailAddress&quot;: &quot;user1@hiq.fi&quot;,
+				&quot;avatarUrls&quot;: {
+					&quot;48x48&quot;: &quot;https://teams.hiq.fi/jira/secure/useravatar&quot;,
+					&quot;24x24&quot;: &quot;https://teams.hiq.fi/jira/secure/useravatar?size=small&quot;,
+					&quot;16x16&quot;: &quot;https://teams.hiq.fi/jira/secure/useravatar?size=xsmall&quot;,
+					&quot;32x32&quot;: &quot;https://teams.hiq.fi/jira/secure/useravatar?size=medium&quot;
+				},
+				&quot;displayName&quot;: &quot;User1&quot;,
+				&quot;active&quot;: &quot;true&quot;,
+				&quot;timeZone&quot;: &quot;Europe/Helsinki&quot;
+			}
+		}
+	}
+}</pre> 
+ </div>
+</div><p><br/></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

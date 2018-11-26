@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : Frends.Common.Data.QueryData.QueryJSON</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Component-specific-documentation_5242885.html">Component specific documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Frends.Common.Data_5242891.html">Frends.Common.Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : Frends.Common.Data.QueryData.QueryJSON
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Emma Luukka</span> on Jan 15, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span style="color: rgb(51,51,51);">This task takes an JSON document as an input and then executes the given JSON query to that document returning the result as a raw value if it was the only match in the JSON document or a part of the JSON document if the query matched a part of the document.</span></p><h3 id="Frends.Common.Data.QueryData.QueryJSON-InputParameters">Input Parameters</h3><ul><li><strong><code>Input</code></strong><ul><li>The document that the query is executed against. Input can be given in the following formats:<ul><li>JSON as a C# String</li><li>C# JObject</li></ul></li></ul></li><li><strong><code>JSONQuery</code></strong><ul><li>The JSON query that is to be executed for this object.</li><li>The JSON query must be written in a JSON query supported format. For more information about JSON query see <strong><a href="http://goessner.net/articles/JsonPath/" class="external-link" rel="nofollow">JSON Query</a></strong>.</li></ul></li></ul><h3 id="Frends.Common.Data.QueryData.QueryJSON-OutputResult">Output Result</h3><ul><li><strong><code>String</code></strong><ul><li>A string containing the result of the JSON query</li></ul></li></ul><h3 id="Frends.Common.Data.QueryData.QueryJSON-ExampleUsage">Example Usage</h3><p>For example calling this task, with the following JSON query:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">$.Manufacturers[?(@.Name == &#39;Acme Co&#39;)]</pre>
+</div></div><p>and a C# JSON String:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &#39;Stores&#39;: [
+    &#39;Lambton Quay&#39;,
+    &#39;Willis Street&#39;
+  ],
+  &#39;Manufacturers&#39;: [
+    {
+      &#39;Name&#39;: &#39;Acme Co&#39;,
+      &#39;Products&#39;: [
+        {
+          &#39;Name&#39;: &#39;Anvil&#39;,
+          &#39;Price&#39;: 50
+        }
+      ]
+    },
+    {
+      &#39;Name&#39;: &#39;Contoso&#39;,
+      &#39;Products&#39;: [
+        {
+          &#39;Name&#39;: &#39;Elbow Grease&#39;,
+          &#39;Price&#39;: 99.95
+        },
+        {
+          &#39;Name&#39;: &#39;Headlight Fluid&#39;,
+          &#39;Price&#39;: 4
+        }
+      ]
+    }
+  ]
+}</pre>
+</div></div><p>Will produce the following JSON result:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{ 
+   &quot;Name&quot;: &quot;Acme Co&quot;, 
+   Products: [
+     { 
+       &quot;Name&quot;: &quot;Anvil&quot;, 
+       &quot;Price&quot;: 50 
+     }
+   ] 
+}</pre>
+</div></div><h3 id="Frends.Common.Data.QueryData.QueryJSON-Errors"><span style="color: rgb(0,0,0);">Errors</span></h3><p>The task will return an exception <code>The input data was not recognized. Supported formats are JSON string and JObject.</code> if the input data could not be read correctly.</p><p>The task will return an exception <code>JSON query returned zero elements.</code> if the XPath did not match any elements.</p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

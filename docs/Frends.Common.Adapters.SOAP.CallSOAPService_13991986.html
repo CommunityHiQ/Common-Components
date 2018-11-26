@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : Frends.Common.Adapters.SOAP.CallSOAPService</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Component-specific-documentation_5242885.html">Component specific documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Frends.Common.Adapters_13991983.html">Frends.Common.Adapters</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : Frends.Common.Adapters.SOAP.CallSOAPService
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Ville Halminen</span>, last modified on Mar 24, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This task executes a given process with the given parameters asynchronously.</p><h3 id="Frends.Common.Adapters.SOAP.CallSOAPService-InputParameters">Input Parameters</h3><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter name</th><th class="confluenceTh">Description</th><th colspan="1" class="confluenceTh">Data type</th><th class="confluenceTh">Example values</th></tr><tr><th style="text-align: right;" class="confluenceTh"><strong>Payload</strong></th><td class="confluenceTd"><p>Data to be written into SOAP server.</p></td><td colspan="1" class="confluenceTd">String</td><td class="confluenceTd"><p>&quot;&lt;foo&gt;bar&lt;/foo&gt;&quot;</p></td></tr><tr><th colspan="1" style="text-align: right;" class="confluenceTh"><p>RequestType</p></th><td colspan="1" class="confluenceTd">If payload is already soap-format the use RAW otherwise use SOAPMessage then Payload is not wrapped inside the soap-format.</td><td colspan="1" class="confluenceTd">SOAPRequestType</td><td colspan="1" class="confluenceTd">Raw/<span>SOAPMessage</span></td></tr><tr><th colspan="1" style="text-align: right;" class="confluenceTh"><span>ResponseType</span></th><td colspan="1" class="confluenceTd">How task returns value RAW = string, <br/>SOAPMessage = string(but soap envelope has been removed), <br/>Dynamic = E<span>xpandoObject, <br/>Both is reserved future use and dotn't use this.</span></td><td colspan="1" class="confluenceTd">SOAPRequestResponseType</td><td colspan="1" class="confluenceTd">Raw / SOAPMessage / Dynamic / Both</td></tr><tr><th colspan="1" style="text-align: right;" class="confluenceTh"><span>ServiceAddress</span></th><td colspan="1" class="confluenceTd">SOAP server address</td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd">&quot;https://foo.bar/api/v1/&quot;</td></tr><tr><th colspan="1" style="text-align: right;" class="confluenceTh"><span>SOAPAction</span></th><td colspan="1" class="confluenceTd">SOAP action</td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd">&quot;foo&quot;</td></tr><tr><th colspan="1" style="text-align: right;" class="confluenceTh"><span>ContentType</span></th><td colspan="1" class="confluenceTd">Http header content type value</td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd">&quot;text/xml&quot;</td></tr><tr><th colspan="1" style="text-align: right;" class="confluenceTh"><span>ContentEncoding</span></th><td colspan="1" class="confluenceTd">Http header for encoding</td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd">&quot;UTF-8&quot;</td></tr><tr><th colspan="1" style="text-align: right;" class="confluenceTh"><span>CertificateFile</span></th><td colspan="1" class="confluenceTd">File path where is certification file if SOAP server requires this to accept calls. Can be null or empty otherwise.</td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd">&quot;c:\foo\bar.cer&quot;</td></tr><tr><th colspan="1" style="text-align: right;" class="confluenceTh"><span>TimeoutSecond</span></th><td colspan="1" class="confluenceTd">Second to be wait server response before call is considered as an failure.</td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr><tr><th style="text-align: right;" class="confluenceTh">Headers</th><td class="confluenceTd"><p>Extra headers for HTTP-message(optional)</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter name</th><th class="confluenceTh">Description</th><th colspan="1" class="confluenceTh">Data type</th><th class="confluenceTh">Example</th></tr><tr><td class="confluenceTd">Name</td><td class="confluenceTd">Name of the argument</td><td colspan="1" class="confluenceTd">String</td><td class="confluenceTd"> &quot;&quot;</td></tr><tr><td class="confluenceTd">Value</td><td class="confluenceTd">Value of the argument</td><td colspan="1" class="confluenceTd">String </td><td class="confluenceTd">&quot;&quot;</td></tr></tbody></table></div></td><td colspan="1" class="confluenceTd">Object collection</td><td class="confluenceTd"> </td></tr></tbody></table></div><h3 id="Frends.Common.Adapters.SOAP.CallSOAPService-Output">Output</h3><p>The SOAP response XML.</p><p> </p><div class="panel" style="border-width: 2px;"><div class="panelContent">
+<h3 id="Frends.Common.Adapters.SOAP.CallSOAPService-ExampleUsage">Example Usage</h3><p><strong>Payload:</strong> <span class="inline-comment-marker" data-ref="dccd2522-c249-4cfc-8bdb-4f1f5d462a6e">&quot;</span><span><span class="inline-comment-marker" data-ref="dccd2522-c249-4cfc-8bdb-4f1f5d462a6e">&lt;foo&gt;bar&lt;/foo&gt;</span></span><code><span class="inline-comment-marker" data-ref="dccd2522-c249-4cfc-8bdb-4f1f5d462a6e">&quot;</span></code></p><p><strong>RequestType: </strong>SOAPRequestType.<span>Raw</span></p><p><strong>ResponseType: </strong>SOAPRequestResponseType.Raw</p><p><strong><span>ServiceAddress: </span></strong>&quot;www.foo.bar/api&quot;</p><p><strong><span><span>SOAPAction: &quot;</span></span></strong>foo&quot;</p><p><strong><span><span><span>ContentType: </span></span></span></strong>&quot;text/xml&quot;</p><p><strong><span><span><span><span>ContentEncoding: </span></span></span></span></strong>&quot;UTF-8&quot;</p><p><strong><span><span><span><span><span>CertificateFile: </span></span></span></span></span></strong><span><span><span><span><span>null</span></span></span></span></span></p><p><strong><span><span><span><span><span><span>TimeoutSecond: </span></span></span></span></span></span></strong><span><span><span><span><span><span>30</span></span></span></span></span></span></p><p><strong>Headers:</strong> <span> </span></p><ul><li><span>Header 1<br class="_mce_tagged_br"/></span><ul><li><span>Name = &quot;&quot;</span></li><li><span>Value = &quot;&quot;</span></li></ul></li></ul><h3 id="Frends.Common.Adapters.SOAP.CallSOAPService-Results">Results</h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence" data-theme="Confluence">&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+	&lt;SOAP-ENV:Header&gt;
+		&lt;Message&gt;&lt;/Message&gt;
+	&lt;/SOAP-ENV:Header&gt;
+&lt;/SOAP-ENV:Envelope&gt;</pre>
+</div></div>
+</div></div><div><span><br/></span></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

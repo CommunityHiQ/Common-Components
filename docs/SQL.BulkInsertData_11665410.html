@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : SQL.BulkInsertData</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Component-specific-documentation_5242885.html">Component specific documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Frends.Common.Database_5242893.html">Frends.Common.Database</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : SQL.BulkInsertData
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Janne Vuoti</span>, last modified on Mar 02, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Bulk inserts data, using <a href="https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlbulkcopy%28v=vs.110%29.aspx" class="external-link" rel="nofollow"><span class="n">SqlBulkCopy</span></a>.</p><h3 id="SQL.BulkInsertData-Inputparameters">Input parameters</h3><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter</th><th class="confluenceTh">Description</th><th class="confluenceTh">Example</th></tr><tr><td class="confluenceTd">Input data</td><td class="confluenceTd">The data to insert. See below for possible values and examples</td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">Table name</td><td colspan="1" class="confluenceTd">Name of table to bulk insert to. Will overwrite any value in the given DataTable.</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">Sql input data type</td><td colspan="2" class="confluenceTd"><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Type</th><th class="confluenceTh">Description</th><th colspan="1" class="confluenceTh">Example input data</th></tr><tr><td class="confluenceTd">XmlString</td><td class="confluenceTd">String that can be read to a DataSet using <a href="https://msdn.microsoft.com/fi-fi/library/system.data.dataset.readxml%28v=vs.110%29.aspx" class="external-link" rel="nofollow">DataSet.ReadXml</a></td><td colspan="1" class="confluenceTd">@&quot;&lt;ROWSET&gt;&lt;ROW&gt;&lt;NameColumn&gt;Jones&lt;/NameColumn&gt;&lt;/ROW&gt;&lt;/ROWSET&gt;&quot;</td></tr><tr><td colspan="1" class="confluenceTd">XmlDocument</td><td colspan="1" class="confluenceTd">XmlDocument instance that can be read to a DataSet using <a href="https://msdn.microsoft.com/fi-fi/library/system.data.dataset.readxml%28v=vs.110%29.aspx" class="external-link" rel="nofollow">DataSet.ReadXml</a></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">XDocument</td><td colspan="1" class="confluenceTd">XDocument instance that can be read to a DataSet using <a href="https://msdn.microsoft.com/fi-fi/library/system.data.dataset.readxml%28v=vs.110%29.aspx" class="external-link" rel="nofollow">DataSet.ReadXml</a></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">JsonString</td><td colspan="1" class="confluenceTd">String that can be serialized as DataTable using <a href="http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Converters_DataTableConverter.htm" class="external-link" rel="nofollow">Json.Net's DataTableConverter</a></td><td colspan="1" class="confluenceTd">{&quot;Table&quot;:[{&quot;NameColumn&quot;:&quot;Jones&quot;},{&quot;NameColumn&quot;:&quot;Smith&quot;}]}</td></tr><tr><td colspan="1" class="confluenceTd">JObject</td><td colspan="1" class="confluenceTd">JObject that can be serialized as DataSet using <a href="http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Converters_DataTableConverter.htm" class="external-link" rel="nofollow">Json.Net's DataTableConverter</a></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">DataTable</td><td colspan="1" class="confluenceTd">Ready-made DataTable to insert</td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div></td></tr><tr><td colspan="1" class="confluenceTd">Connection string</td><td colspan="1" class="confluenceTd">The connection string to use</td><td colspan="1" class="confluenceTd">&quot;Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;&quot;</td></tr><tr><td colspan="1" class="confluenceTd">Timeout seconds</td><td colspan="1" class="confluenceTd">The command timeout</td><td colspan="1" class="confluenceTd">60</td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

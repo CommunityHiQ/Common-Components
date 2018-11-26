@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : Frends.Common.Data.TransformData.XSLTTransform</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Component-specific-documentation_5242885.html">Component specific documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Frends.Common.Data_5242891.html">Frends.Common.Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : Frends.Common.Data.TransformData.XSLTTransform
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Emma Luukka</span>, last modified by <span class='editor'> Frends Editor</span> on Jan 30, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This task takes an XML document as an input and then executes the given XSLT transformation to that document outputting the resulting XML.</p><h3 id="Frends.Common.Data.TransformData.XSLTTransform-InputParameters">Input Parameters</h3><h3 id="Frends.Common.Data.TransformData.XSLTTransform-InputParameters.1">Input Parameters</h3><div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Parameter name</th><th class="confluenceTh">Description</th><th colspan="1" class="confluenceTh">Data type</th><th class="confluenceTh">Example values</th></tr><tr><th style="text-align: right;" class="confluenceTh"><strong>Input</strong></th><td class="confluenceTd"><p>The document that the XSLT transformation is executed against. Input can be given in the following formats:</p><ul><li>XML as a C# String</li><li>C# XmlDocument</li></ul></td><td colspan="1" class="confluenceTd">String / XmlDocument</td><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence" data-theme="Confluence">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; 
+xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+    &lt;xsl:template match=&quot;/&quot;&gt;
+      &lt;bar&gt;&lt;xsl:value-of select=&quot;foo&quot;/&gt;&lt;/bar&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+</div></div></td></tr><tr><th style="text-align: right;" class="confluenceTh">XSLT</th><td class="confluenceTd"><ul><li>The XSLT document that the input is transformed against.</li></ul></td><td colspan="1" class="confluenceTd">String</td><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence" data-theme="Confluence">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;foo&gt;bar&lt;/foo&gt;</pre>
+</div></div></td></tr><tr><th style="text-align: right;" colspan="1" class="confluenceTh">XSLT Parameters</th><td colspan="1" class="confluenceTd"><p>Collection of XSLT-parameters for the transform. <span>For examples and documentation see <a href="http://www.w3schools.com/xsl/el_param.asp" class="external-link" rel="nofollow">XSLT &lt;xsl:param&gt; Element</a></span><strong>.</strong></p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter name</th><th class="confluenceTh">Description</th><th class="confluenceTh">Data type</th><th colspan="1" class="confluenceTh">Example</th></tr><tr><td class="confluenceTd"> Name</td><td class="confluenceTd"> Name of the parameter. Value can be used in the XSLT-map with this name.</td><td class="confluenceTd">String</td><td colspan="1" class="confluenceTd"> &quot;NumberOfPeople&quot;</td></tr><tr><td class="confluenceTd">Value </td><td class="confluenceTd"> Value of the parameter.</td><td class="confluenceTd">String </td><td colspan="1" class="confluenceTd"> &quot;100&quot;</td></tr></tbody></table></div></td><td colspan="1" class="confluenceTd">Object collection</td><td colspan="1" class="confluenceTd"> </td></tr><tr><th colspan="1" class="confluenceTh">Parser</th><td colspan="1" class="confluenceTd">XSLT parser beeing used.</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">Saxon, .Net</td></tr></tbody></table></div><h3 id="Frends.Common.Data.TransformData.XSLTTransform-OutputResult">Output Result</h3><ul><li><strong><code>String</code></strong><ul><li>A string containing the transformed XML document</li></ul></li></ul><h3 id="Frends.Common.Data.TransformData.XSLTTransform-Parser">Parser</h3><p>Starting from task version 1.3.4.0 it possible to set XSLT parser (processor) being used. <a href="http://www.saxonica.com/documentation/#!dotnet" class="external-link" rel="nofollow">Saxon</a>, which is used in previous versions, is used by default and XSLT parser provide by <a href="https://msdn.microsoft.com/en-us/library/0610k0w4(v=vs.110).aspx" class="external-link" rel="nofollow">.Net</a> is available as option. The main difference is that Saxon supports XSLT 2.0 and .Net support XSLT 1.0 with support to msxsl:script blocks, which enables using <a href="https://msdn.microsoft.com/en-us/library/wxaw5z5e(v=vs.110).aspx" class="external-link" rel="nofollow">C# script inside XSL files.</a></p><h3 id="Frends.Common.Data.TransformData.XSLTTransform-Errors">Errors</h3><p>The task will return an exception <code>The input data was not recognized. Supported formats are XML string and XMLDocument.</code> if the input data or the XSLT document could not be read correctly.</p><p>The task will return an exception <code>Xpath query returned zero elements.</code> if the XPath did not match any elements.</p><p> </p><div class="panel" style="border-width: 2px;"><div class="panelContent">
+<h3 id="Frends.Common.Data.TransformData.XSLTTransform-ExampleUsage">Example Usage</h3><p>For XSLT examples and documentation see <strong><a href="http://www.w3schools.com/xsl/xsl_examples.asp" class="external-link" rel="nofollow">W3Schools XSLT</a>.</strong></p><p><strong>Input:</strong> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence" data-theme="Confluence">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; 
+xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+    &lt;xsl:template match=&quot;/&quot;&gt;
+      &lt;bar&gt;&lt;xsl:value-of select=&quot;foo&quot;/&gt;&lt;/bar&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+</div></div><p><strong>XML:</strong> <span> </span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence" data-theme="Confluence">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;foo&gt;bar&lt;/foo&gt;</pre>
+</div></div><h3 id="Frends.Common.Data.TransformData.XSLTTransform-Results">Results</h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence" data-theme="Confluence">&lt;bar&gt;bar&lt;/bar&gt;</pre>
+</div></div>
+</div></div><p><strong><br/></strong></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

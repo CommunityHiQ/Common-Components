@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : Frends.Common.Data.QueryData.XpathReplaceValues</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Component-specific-documentation_5242885.html">Component specific documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Frends.Common.Data_5242891.html">Frends.Common.Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : Frends.Common.Data.QueryData.XpathReplaceValues
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Frends Editor</span>, last modified on Aug 25, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This task takes an XML document as an input and then executes the given XPath queries to find nodes and replace the value of those nodes. The task will return the altered XML document.</p><p>If single XPath evaluates to multiple nodes then all values will be replaced.</p><h3 id="Frends.Common.Data.QueryData.XpathReplaceValues-InputParameters">Input Parameters</h3><ul><li><strong><code>Input</code></strong><ul><li>The document that the query and replacement is executed against. Input can be given in the following formats:<ul><li>XML as a C# String</li></ul></li></ul></li><li><strong><code>XPath</code></strong><ul><li>The XPath query that is to be executed for this object.</li><li>The XPath query must be written in a correct format. For more information about XPath see <strong><a href="http://www.w3schools.com/xsl/xpath_intro.asp" class="external-link" rel="nofollow">W3Schools XPath</a></strong>.</li></ul></li><li><strong><code>Value</code></strong><ul><li>Value used for replacement<ul><li>string</li></ul></li></ul></li><li>ThrowErrorOnMissingNode<ul><li>Boolean to determine whether to throw exception when Xpath does not find any nodes.</li></ul></li></ul><h3 id="Frends.Common.Data.QueryData.XpathReplaceValues-OutputResult">Output Result</h3><ul><li><strong><code>String</code></strong><ul><li>A string containing the altered XML document.</li></ul></li></ul><h3 id="Frends.Common.Data.QueryData.XpathReplaceValues-ExampleUsage">Example Usage</h3><p>For example calling this task, with the following inputs:</p><p>Value: Blorgh!</p><p>XPath:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>XPath</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">/*[local-name()=&#39;root&#39; and namespace-uri()=&#39;http://test0&#39;]//*[local-name()=&#39;handle&#39; and namespace-uri()=&#39;http://test/v1&#39;]/*[local-name()=&#39;info&#39; and namespace-uri()=&#39;&#39;][local-name()=&#39;info&#39; and namespace-uri()=&#39;&#39;][contentType/text()=&#39;locationId&#39;]/*[local-name()=&#39;value&#39; and namespace-uri()=&#39;&#39;]</pre>
+</div></div><p>and a C# XML String:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Input</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence" data-theme="Confluence">&lt;v0:root xmlns:v0=&quot;http://test0&quot; xmlns:v1=&quot;http://test/v1&quot;&gt;
+    &lt;v1:handle&gt;
+        &lt;info&gt;
+            &lt;contentType&gt;Bears&lt;/contentType&gt;
+            &lt;value&gt;456&lt;/value&gt;
+        &lt;/info&gt;
+        &lt;info&gt;
+            &lt;contentType&gt;locationId&lt;/contentType&gt;
+            &lt;value&gt;123&lt;/value&gt;
+        &lt;/info&gt;
+    &lt;/v1:handle&gt;
+&lt;/v0:root&gt;</pre>
+</div></div><p>Will produce the following result:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Output</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence" data-theme="Confluence">&lt;v0:root xmlns:v0=&quot;http://test0&quot; xmlns:v1=&quot;http://test/v1&quot;&gt;
+    &lt;v1:handle&gt;
+        &lt;info&gt;
+            &lt;contentType&gt;Bears&lt;/contentType&gt;
+            &lt;value&gt;456&lt;/value&gt;
+        &lt;/info&gt;
+        &lt;info&gt;
+            &lt;contentType&gt;locationId&lt;/contentType&gt;
+            &lt;value&gt;Blorg&lt;/value&gt;
+        &lt;/info&gt;
+    &lt;/v1:handle&gt;
+&lt;/v0:root&gt;</pre>
+</div></div><h3 id="Frends.Common.Data.QueryData.XpathReplaceValues-Errors"><span style="color: rgb(0,0,0);">Errors</span></h3><p>The task will return an exception <code>The input data was not recognized. Supported formats are XML string and XMLDocument.</code> if the input data could not be read correctly.</p><p>The task will return an exception &quot;'Could not find any nodes with XPath: ' + Xpath&quot; if the XPath did not match any elements and ThrowErrorOnMissingNode is true.</p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

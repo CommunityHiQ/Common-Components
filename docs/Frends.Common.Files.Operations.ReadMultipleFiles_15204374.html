@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FRENDS⁴ Common Components : Frends.Common.Files.Operations.ReadMultipleFiles</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1376385.html">FRENDS⁴ Common Components</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Component-specific-documentation_5242885.html">Component specific documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Frends.Common.Files_5242900.html">Frends.Common.Files</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            FRENDS⁴ Common Components : Frends.Common.Files.Operations.ReadMultipleFiles
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Ville Halminen</span>, last modified on Mar 30, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This task creates a HTTP that can be returned from a process that has a HTTP trigger. The task makes it possible to manually set content-type, encoding, content and HTTP headers for the response.</p><h3 id="Frends.Common.Files.Operations.ReadMultipleFiles-InputParameters">Input Parameters</h3><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter name</th><th class="confluenceTh">Description</th><th colspan="1" class="confluenceTh">Data type</th><th class="confluenceTh">Example values</th></tr><tr><th colspan="1" class="confluenceTh">Files</th><td colspan="1" class="confluenceTd"><p>Collection of files to be read.</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter name</th><th class="confluenceTh">Description</th><th colspan="1" class="confluenceTh">Data type</th><th class="confluenceTh">Example</th></tr><tr><td class="confluenceTd">File path</td><td class="confluenceTd">Path to the file</td><td colspan="1" class="confluenceTd">String</td><td class="confluenceTd"> &quot;C:\\Temp\\file.xml&quot;</td></tr><tr><td class="confluenceTd">Output name</td><td class="confluenceTd">Name for the property where file contents will be stored in the output object.</td><td colspan="1" class="confluenceTd">String </td><td class="confluenceTd"> &quot;<span style="color: rgb(0,0,0);">File1</span>&quot;</td></tr><tr><td colspan="1" class="confluenceTd">Encoding</td><td colspan="1" class="confluenceTd">File encoding</td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd">&quot;UTF-8&quot;</td></tr></tbody></table></div></td><td colspan="1" class="confluenceTd">Object collection</td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div><h3 id="Frends.Common.Files.Operations.ReadMultipleFiles-Output">Output</h3><p>Dynamic object that contains the contents of the files that were read as properties of the object.</p><p> </p><div class="panel" style="border-width: 2px;"><div class="panelContent">
+<h3 id="Frends.Common.Files.Operations.ReadMultipleFiles-ExampleUsage">Example Usage</h3><p><strong>Parameters</strong></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/15204374/15204376.png?height=250" data-image-src="attachments/15204374/15204376.png" data-unresolved-comment-count="0" data-linked-resource-id="15204376" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screenshot 2016-03-30 14.23.39.png" data-base-url="https://frends.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="15204374" data-linked-resource-container-version="6" data-media-id="d7291cf0-9949-4795-aa54-1b8b7695dc32" data-media-type="file"></span></p><p><strong>Dynamic result (represented here as JSON)</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;MyFile1&quot;: &quot;&lt;foo&gt;bar&lt;/foo&gt;&quot;,
+  &quot;MyFile2&quot;: &quot;&lt;bar&gt;foo&lt;/bar&gt;&quot;
+}</pre>
+</div></div><p> </p><p><strong>Using the result</strong></p><p>You can refer to the properties of the dynamic object in other tasks using the following syntax.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence" data-theme="Confluence">(#result).MyFile1</pre>
+</div></div>
+</div></div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/15204374/15204376.png">Screenshot 2016-03-30 14.23.39.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 18, 2017 14:55</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
